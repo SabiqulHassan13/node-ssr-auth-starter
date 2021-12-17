@@ -6,4 +6,36 @@ html {
   font-family: sans-serif;
   font-weight: 400;
   font-size: 1rem;
+
+  --color-gray-100: #c5d3e2;
+
+  --color-gray-400: #9caab9;
+  --color-gray-500: #8c9aa9;
+
+  --color-gray-1100: #2c3a49;
+  --color-gray-1200: #1c2a39;
+
+  --color-blue-800: #0067b0;
+  --color-blue-900: #0057a0;
+
+  --color-green-800: #009c41;
+  --color-green-900: #008c31;
+
+  --color-red-800: #d73c2c;
+  --color-red-900: #c72c1c;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
