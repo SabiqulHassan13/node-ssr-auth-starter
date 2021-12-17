@@ -28,6 +28,14 @@ app.get("/dashboard", (req, res) => {
   res.render("dashboard");
 });
 
+app.get("/login", (req, res) => {
+  res.render("auth/login");
+});
+
+app.get("/register", (req, res) => {
+  res.render("auth/register");
+});
+
 const port = 3000;
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
