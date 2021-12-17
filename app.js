@@ -17,9 +17,9 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+app.set("layout", "layouts/layout");
 app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
-app.set("layout", "layouts/layout");
 
 // route list
 app.use("/", webRoutes);
