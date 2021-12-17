@@ -1,5 +1,41 @@
 <section>
-  <h2>Register Page</h2>
+  <h2>Create New Account</h2>
+  <form action="" method="POST">
+    <div>
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" required />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+    </div>
+    <!-- <div>
+      <label for="confirm-email">Confirm Email</label>
+      <input type="email" name="confirm-email" id="confirm-email" required />
+    </div> -->
+    <div>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        minlength="6"
+        required
+      />
+    </div>
+    <div>
+      <label for="confirm-password">Confirm Password</label>
+      <input
+        type="password"
+        name="confirm-password"
+        id="confirm-password"
+        minlength="6"
+        required
+      />
+    </div>
+    <button type="submit">Create Account</button>
+    <p id="switch-form"><a href="/login">Login instead</a></p>
+  </form>
   <p>
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus nisi
     aperiam voluptatem architecto id deserunt hic facere fugiat atque nihil est
