@@ -25,15 +25,18 @@ app.set("layout extractScripts", true);
 // route list
 app.use("/", webRoutes);
 
-// connect mongodb & run server
+// connect mongodb
 db.connectDB()
   .then(() => {
-    const port = 3000;
-    app.listen(port, () => {
-      console.log(`Server is running at http://localhost:${port}`);
-    });
+    console.log("DB connected successfully...");
   })
   .catch((err) => {
     console.log("Failed to connect DB...");
     console.log(err);
   });
+
+// run server
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});
