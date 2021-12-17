@@ -3,6 +3,7 @@ const path = require("path");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 
+const db = require("./config/db-mongodb");
 const webRoutes = require("./routes/web");
 
 const app = express();
@@ -24,7 +25,14 @@ app.set("layout extractScripts", true);
 // route list
 app.use("/", webRoutes);
 
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+db.connectDB()
+  .then(() => {
+    const port = 3000;
+    app.listen(port, () => {
+      console.log(`Server is running at http://localhost:${port}`);
+    });
+  })
+  .catch((err) => {
+    console.log("Failed to connect DB...");
+    console.log(err);
+  });

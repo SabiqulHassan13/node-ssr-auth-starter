@@ -10,6 +10,9 @@ router.get("/dashboard", homeController.showDashboard);
 
 // Auth Routes
 router.get("/register", authController.showRegister);
+router.post("/register", authController.processRegister);
+
 router.get("/login", authController.showLogin);
+router.post("/login", authController.processLogin);
 
 module.exports = router;

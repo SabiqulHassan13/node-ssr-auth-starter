@@ -6,4 +6,10 @@ const showLogin = (req, res) => {
   res.render("auth/login");
 };
 
-module.exports = { showRegister, showLogin };
+const processRegister = (req, res) => {
+  
+};
+
+const processLogin = (req, res) => {};
+
+module.exports = { showRegister, showLogin, processRegister, processLogin };
