@@ -25,6 +25,7 @@ app.set("layout extractScripts", true);
 // route list
 app.use("/", webRoutes);
 
+// connect mongodb & run server
 db.connectDB()
   .then(() => {
     const port = 3000;
