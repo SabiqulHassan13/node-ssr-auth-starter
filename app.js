@@ -3,6 +3,8 @@ const path = require("path");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 
+const webRoutes = require("./routes/web");
+
 const app = express();
 
 // middleware list
@@ -20,21 +22,7 @@ app.set("layout extractScripts", true);
 app.set("layout", "layouts/layout");
 
 // route list
-app.get("/", (req, res) => {
-  res.render("home");
-});
-
-app.get("/dashboard", (req, res) => {
-  res.render("dashboard");
-});
-
-app.get("/login", (req, res) => {
-  res.render("auth/login");
-});
-
-app.get("/register", (req, res) => {
-  res.render("auth/register");
-});
+app.use("/", webRoutes);
 
 const port = 3000;
 app.listen(port, () => {
