@@ -1,0 +1,13 @@
+section h2 {
+  text-align: center;
+  /* color: var(--color-blue-900); */
+}
+
+form {
+  max-width: 25rem;
+  margin: var(--space-8) auto;
+  padding: var(--space-4);
+  background-color: var(--color-white-50);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-md);
+}

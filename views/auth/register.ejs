@@ -4,11 +4,11 @@
 <section>
   <h2>Create New Account</h2>
   <form action="" method="POST">
-    <div>
+    <div class="form-row">
       <label for="username">Username</label>
       <input type="text" name="username" id="username" required />
     </div>
-    <div>
+    <div class="form-row">
       <label for="email">Email</label>
       <input type="email" name="email" id="email" required />
     </div>
@@ -16,7 +16,7 @@
       <label for="confirm-email">Confirm Email</label>
       <input type="email" name="confirm-email" id="confirm-email" required />
     </div> -->
-    <div>
+    <div class="form-row">
       <label for="password">Password</label>
       <input
         type="password"
@@ -26,7 +26,7 @@
         required
       />
     </div>
-    <div>
+    <div class="form-row">
       <label for="confirm-password">Confirm Password</label>
       <input
         type="password"
@@ -37,12 +37,8 @@
       />
     </div>
     <button class="btn" type="submit">Create Account</button>
-    <!-- <button class="btn reset">Reset</button> -->
-    <p id="switch-form"><a href="/login">Login instead</a></p>
+    <p id="switch-form">
+      Already have an account? <a href="/login">Login Now</a>
+    </p>
   </form>
-  <p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus nisi
-    aperiam voluptatem architecto id deserunt hic facere fugiat atque nihil est
-    itaque officia beatae iure iusto, porro nemo eum. Facere!
-  </p>
 </section>

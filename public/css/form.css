@@ -1,3 +1,25 @@
-section h2 {
-  text-align: center;
+.form-row {
+  margin: var(--space-2) 0;
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-weight: medium;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: var(--space-2);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-blue-500);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid var(--color-blue-900);
 }
