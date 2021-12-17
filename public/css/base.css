@@ -68,6 +68,10 @@ a {
   color: var(--color-blue-500);
 }
 
+section {
+  padding: var(--space-4) 0;
+}
+
 .btn {
   display: inline-block;
   font: inherit;
