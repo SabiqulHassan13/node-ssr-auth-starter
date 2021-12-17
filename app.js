@@ -1,12 +1,34 @@
-const express = require('express');
+const path = require("path");
+
+const express = require("express");
+const expressLayouts = require("express-ejs-layouts");
 
 const app = express();
 
-app.get('/', (req, res) => {
-	res.send('hello world')
-})
+// middleware list
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "public")));
 
-const port = 3000
+app.use(expressLayouts);
+
+// activate template engine
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+app.set("layout extractStyles", true);
+app.set("layout extractScripts", true);
+app.set("layout", "layouts/layout");
+
+// route list
+app.get("/", (req, res) => {
+  res.render("home");
+});
+
+app.get("/dashboard", (req, res) => {
+  res.render("dashboard");
+});
+
+const port = 3000;
 app.listen(port, () => {
-	console.log(`Server is running at port:${port}`)
-})
+  console.log(`Server is running at http://localhost:${port}`);
+});
