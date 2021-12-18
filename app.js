@@ -3,10 +3,27 @@ const path = require("path");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 
-const db = require("./config/db-mongodb");
 const webRoutes = require("./routes/web");
+// const { connectMongoDB } = require("./config/database");
+const { connectMongoDB } = require("./config/db-mongo");
 
 const app = express();
+const PORT = 3000;
+
+// connect database
+connectMongoDB()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close());
+
+// .then(function () {
+//   console.log("Connected DB successfully");
+//   app.listen(PORT);
+// })
+// .catch(function (err) {
+//   console.log("Failed DB connection");
+//   console.log(err);
+// });
 
 // middleware list
 app.use(express.urlencoded({ extended: false }));
@@ -25,18 +42,7 @@ app.set("layout extractScripts", true);
 // route list
 app.use("/", webRoutes);
 
-// connect mongodb
-db.connectDB()
-  .then(() => {
-    console.log("DB connected successfully...");
-  })
-  .catch((err) => {
-    console.log("Failed to connect DB...");
-    console.log(err);
-  });
-
 // run server
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
 });

@@ -1,6 +1,6 @@
 const bcrypt = require("bcryptjs");
 
-const db = require("../config/db-mongodb");
+// const db = require("../config/database");
 
 class User {
   constructor(username, email, password) {
@@ -12,7 +12,7 @@ class User {
   async register() {
     const hashedPassword = await bcrypt.hash(this.password, 12);
 
-    await db.getDB.collections("users").insertOne({
+    await db.getDB.collection("users").insertOne({
       username: this.username,
       email: this.email,
       password: hashedPassword,
