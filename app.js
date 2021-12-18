@@ -6,6 +6,7 @@ const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
+const { connectDB } = require("./config/db-sequelize");
 const webRoutes = require("./routes/web");
 const {
   notFoundHandler,
@@ -18,13 +19,15 @@ const app = express();
 const PORT = process.env.PORT;
 
 // connect database
-mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("mongodb connection successful !"))
-  .catch((err) => console.log(err));
+connectDB();
+
+// mongoose
+//   .connect(process.env.MONGO_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log("mongodb connection successful !"))
+//   .catch((err) => console.log(err));
 
 // middleware list
 // set request parser
