@@ -1,17 +1,20 @@
+require("dotenv").config();
 const path = require("path");
 
-const dotenv = require("dotenv");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
 const webRoutes = require("./routes/web");
+const {
+  notFoundHandler,
+  commonErrorHandler,
+} = require("./middlewares/error-handler");
 
 // app init
 const app = express();
-dotenv.config();
-
+// dotenv.config();
 const PORT = process.env.PORT;
 
 // connect database
@@ -48,6 +51,8 @@ app.use(cookieParser(process.env.APP_COOKIE_SECRET));
 app.use("/", webRoutes);
 
 // error handling
+app.use(notFoundHandler);
+app.use(commonErrorHandler);
 
 // run server
 app.listen(PORT, () => {
